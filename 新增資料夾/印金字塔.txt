@@ -1,0 +1,16 @@
+//印金字塔
+System.out.print("請輸入欲列印的列數:");
+int rowNumber=sc.nextInt();
+//外迴圈負責印列數
+for(int m=0;m<rowNumber;m++)
+{
+    //每一列空幾個空格
+    for(int p=0;p<rowNumber-m;p++)
+        System.out.print(" ");
+    //內迴圈負責每一列印幾個星星
+    for(int x=0;x<m*2+1;x++)
+        System.out.print("*");
+    //此?述為外迴圈,換行用
+    System.out.println();
+    
+}

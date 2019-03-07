@@ -1,0 +1,116 @@
+public class MethodTest {
+public static void main(String[] args) {
+////1+2+....50之總和
+//int sum=0;
+//for(int m=1;m<=50;m++)
+//    sum+=m;
+//System.out.println("1+2+...+50="+sum);
+////==============================
+////1+2+....100之總和
+//sum=0;
+//for(int m=1;m<=100;m++)
+//    sum+=m;
+//System.out.println("1+2+...+100="+sum);
+
+//將上述程式改成以方法撰寫
+System.out.println("1+2+3+.......+50="+total(50));
+System.out.println("1+2+3+.......+100="+total(100));
+System.out.println("1+2+3+.......+200="+total(200));
+}
+//計算總合之方法
+public static int total(int max){
+    int sum=0;
+   for(int m=1;m<=max;m++)
+   sum+=m;
+   return sum;
+}
+}
+
+
+
+
+
+//call by value
+package evelenthcourse;
+public class MethodTest2 {
+public static void main(String[] args) {
+int m=1;
+System.out.println("呼叫方法前的m="+m);
+changeValue(m);
+System.out.println("呼叫方法後的m="+m);
+
+}
+//宣告方法
+public static void changeValue(int m)
+{
+    System.out.println("方法內的m="+m);
+    m+=5;
+    System.out.println("方法內運算後的m="+m);
+}
+}
+
+
+//call by address(陣列應用)
+public class MethodTest3 {
+
+    public static void main(String[] args) {
+        int score[] = {60, 50, 100, 98, 70, 30};
+        System.out.println("呼叫方法前之陣列內容為:");
+        for (int x : score) {
+            System.out.print(x + "\t");
+        }
+        System.out.println();
+        sortArray(score);
+        System.out.println("呼叫方法後之陣列內容為:");
+        for (int x : score) {
+            System.out.print(x + "\t");
+        }
+        System.out.println();
+    }
+
+    public static void sortArray(int[] score) {
+        System.out.println("方法內之陣列內容為:");
+        for (int x : score) {
+            System.out.print(x + "\t");
+        }
+        System.out.println();
+        //陣列排序,由小到大
+        for(int m=0;m<score.length-1;m++)
+        {
+            for(int n=m+1;n<score.length;n++)
+            {
+                if(score[m]>score[n])
+                {
+                    int temp=0;
+                    temp=score[m];
+                    score[m]=score[n];
+                    score[n]=temp;
+                }
+            }
+        }
+        
+          System.out.println("方法內排序後之陣列內容為:");
+        for (int x : score) {
+            System.out.print(x + "\t");
+        }
+        System.out.println();
+    }
+}
+
+//call by address(物件應用)
+public static void main(String[] args) {
+Rectangle rec=new Rectangle();
+ System.out.printf("呼叫方法前物件屬性寬為%d,高為%d%n",rec.w,rec.h);
+ changObj(rec);
+ System.out.printf("呼叫方法後物件屬性寬為%d,高為%d%n",rec.w,rec.h);
+}
+public static void changObj(Rectangle rec)
+{
+    rec.h=5;
+    rec.w=8;
+    System.out.printf("方法內設定物件屬性寬為%d,高為%d%n",rec.w,rec.h);
+}
+}
+class Rectangle{
+    int h,w;
+}

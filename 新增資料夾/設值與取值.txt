@@ -1,0 +1,43 @@
+package evelenthcourse;
+
+import javax.swing.JOptionPane;
+
+public class EvelenthCourse {
+    public static void main(String[] args) {
+    Father f=new Father();
+    //f.quantity=20;
+    int price1=Integer.parseInt(JOptionPane.showInputDialog("請輸入單價"));
+    int quantity1=Integer.parseInt(JOptionPane.showInputDialog("請輸入數量"));
+    f.setPrice(price1);
+    f.setQuantity(quantity1);
+    f.showTotal();
+     System.out.printf("主程式內的單價:%d,數量:%d,總金額:%d%n",f.getPrice(),f.getQuantity(),f.getPrice()*f.getQuantity());
+    }
+}
+class Father{
+    private int quantity;
+    private int price;
+    public void showTotal(){
+        System.out.printf("類別內的單價:%d,數量:%d,總金額:%d%n",price,quantity,quantity*price);
+    }
+     //設值方法,讓外界可利用此方法設定private的成員
+    public void setQuantity(int quantity)//設定數量
+    {
+        this.quantity=quantity;
+    }
+    public void setPrice(int price)//設定單價
+    {
+        this.price=price;
+    }
+    //取值
+     public int getQuantity()//回傳數量
+    {
+        return quantity;
+    }
+    //取值
+     public int getPrice()//回傳數量
+    {
+        return price;
+    }
+
+}

@@ -1,0 +1,8 @@
+//巢狀迴圈
+for(int m=1;m<=5;m++)
+{
+    System.out.print("m="+m+"\t");
+    for(int p=1;p<=3;p++)
+        System.out.print("p="+p+"\t");
+    System.out.println();//此行是屬於外迴圈,用於換行用
+}

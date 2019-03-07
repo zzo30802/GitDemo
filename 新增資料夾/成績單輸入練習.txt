@@ -1,0 +1,26 @@
+//成績單輸入練習
+//宣告一維陣列 姓名,科目
+String studentName[]={"張三","李四","王五"};
+String subjectTitle[]={"國文","英文"};
+//宣告二維陣列用來儲存成績
+int score[][]=new int[3][2];
+//利用巢狀迴圈及showInputDialog讓使用者輸入成績
+for(int m=0;m<studentName.length;m++)
+{
+    for(int n=0;n<subjectTitle.length;n++)
+    {
+        score[m][n]=Integer.parseInt(JOptionPane.showInputDialog("請輸入"+studentName[m]+"的"+subjectTitle[n]+"成績"));
+    }
+}
+//印出成績單內容
+//印出科目
+for(String x:subjectTitle)
+    System.out.print("\t"+x);
+System.out.println();//換行
+for(int m=0;m<studentName.length;m++)
+{
+    System.out.print(studentName[m]+"\t");//印出同學姓名
+    for(int n=0;n<subjectTitle.length;n++)
+        System.out.print(score[m][n]+"\t");//印出各科成績
+    System.out.println();//換行
+}

@@ -1,0 +1,48 @@
+public class TenthCourse {
+    //在此宣告的變數為物件變數
+    public int w;
+    protected int x;
+    int y;
+    private int z;
+    
+    public static void main(String[] args) {
+    //在此宣告的變數為區域變數
+    //經由類別產生物件實體
+    TenthCourse ten=new TenthCourse();
+    //設定物件屬性
+    ten.w=10;
+    ten.x=20;
+    ten.y=30;
+    ten.z=40;
+    //呼叫物件方法
+    ten.doSomething();
+ 
+    }
+    //在此宣告物件方法
+    public void doSomething(){
+        System.out.println("這是物件方法doSomething");
+        System.out.printf("w=%d,x=%d,y=%d,z=%d%n",w,x,y,z);
+       
+       
+    }
+    void aMethod(){//此為non-static method 即為物件方法
+       bMethod();
+       cMethod();
+       dMethod();
+    }
+    void bMethod(){//此為non-static method 即為物件方法
+        
+    }
+   static void cMethod(){//此為static method 即為類別方法
+        dMethod();
+        //bMethod();//此為物件方法,類別方法無法直接呼叫
+      new TenthCourse().bMethod(); //除非實作物件,才可進行呼叫
+    }
+    static void dMethod(){//此為static method 即為類別方法
+        
+    }
+
+}
+  class TenthBrother {
+    static class InsideClass{}
+}
